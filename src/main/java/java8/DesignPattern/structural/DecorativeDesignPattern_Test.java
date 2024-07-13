@@ -5,6 +5,7 @@ interface Coffee {
     double getCost();
 }
 
+// This class represents a basic coffee without any add-ons.
 class SimpleCoffee implements Coffee {
     @Override
     public String getDescription() {
@@ -17,6 +18,7 @@ class SimpleCoffee implements Coffee {
     }
 }
 
+// This abstract class implements the Coffee interface and contains a reference to a Coffee object.
 abstract class CoffeeDecorator implements Coffee {
     protected Coffee decoratedCoffee;
 
@@ -34,7 +36,7 @@ abstract class CoffeeDecorator implements Coffee {
         return decoratedCoffee.getCost();
     }
 }
-
+//These classes add specific functionalities (add-ons) to the basic coffee.
 class MilkDecorator extends CoffeeDecorator {
     public MilkDecorator(Coffee coffee) {
         super(coffee);
